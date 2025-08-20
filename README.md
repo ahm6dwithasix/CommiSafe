@@ -20,6 +20,8 @@ Built with **React, TypeScript, and Node.js**.
 
 ---
 
-### 🔒 License & Copyright
-© 2025 CommiSafe. All rights reserved.  
-Unauthorized copying, modification, distribution, or use of this software is strictly prohibited without prior written permission.  
+### License & Copyright
+© 2025 CommiSafe. All rights reserved.
+
+This software may only be used as an end-user via the CommiSafe platform.
+Source code may NOT be copied, modified, redistributed, or used for any other purpose.
