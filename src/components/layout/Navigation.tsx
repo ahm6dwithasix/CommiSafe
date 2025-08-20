@@ -1,15 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import {
-  Users,
-  FileText,
-  DollarSign,
-  Menu,
-  X,
-  Shield,
-  Home,
-} from "lucide-react";
+import { Menu, X, Home, CheckCircle, BarChart3 } from "lucide-react";
 
 interface NavigationProps {
   currentPage: string;
@@ -24,10 +16,7 @@ export default function Navigation({
 
   const navigationItems = [
     { id: "home", label: "Home", icon: Home },
-    { id: "dashboard", label: "Dashboard", icon: Shield, highlight: true },
-    { id: "influencers", label: "Influencers", icon: Users },
-    { id: "contracts", label: "Contracts", icon: FileText },
-    { id: "commissions", label: "Commissions", icon: DollarSign },
+    { id: "dashboard", label: "Dashboard", icon: BarChart3, highlight: true },
   ];
 
   const handlePageChange = (page: string) => {
@@ -41,12 +30,16 @@ export default function Navigation({
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <Shield className="h-8 w-8 text-blue-600" />
-            <span className="text-xl font-bold text-gray-900">
-              InfluenceHub
-            </span>
-            <Badge variant="secondary" className="text-xs">
-              Safe Contracting
+            <div className="relative">
+              <CheckCircle className="h-8 w-8 text-green-600" />
+              <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-white"></div>
+            </div>
+            <span className="text-xl font-bold text-gray-900">CommiSafe</span>
+            <Badge
+              variant="secondary"
+              className="text-xs bg-green-100 text-green-800"
+            >
+              Secure Commissions
             </Badge>
           </div>
 
@@ -61,7 +54,7 @@ export default function Navigation({
                   onClick={() => handlePageChange(item.id)}
                   className={`flex items-center space-x-2 ${
                     item.highlight
-                      ? "bg-blue-50 text-blue-700 hover:bg-blue-100"
+                      ? "bg-green-50 text-green-700 hover:bg-green-100"
                       : ""
                   }`}
                 >
@@ -105,7 +98,7 @@ export default function Navigation({
                     onClick={() => handlePageChange(item.id)}
                     className={`flex items-center justify-start space-x-2 w-full ${
                       item.highlight
-                        ? "bg-blue-50 text-blue-700 hover:bg-blue-100"
+                        ? "bg-green-50 text-green-700 hover:bg-green-100"
                         : ""
                     }`}
                   >

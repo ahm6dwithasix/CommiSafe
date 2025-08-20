@@ -8,16 +8,15 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
-  Shield,
-  Users,
-  FileText,
-  DollarSign,
   CheckCircle,
   Star,
   TrendingUp,
   Lock,
   Zap,
   ArrowRight,
+  DollarSign,
+  BarChart3,
+  Shield,
 } from "lucide-react";
 
 interface LandingPageProps {
@@ -27,28 +26,10 @@ interface LandingPageProps {
 export default function LandingPage({ onGetStarted }: LandingPageProps) {
   const features = [
     {
-      icon: Shield,
-      title: "Safe Contracting",
-      description:
-        "Secure, legally-binding contracts that protect both influencers and brands with built-in dispute resolution.",
-    },
-    {
       icon: DollarSign,
       title: "Commission Tracking",
       description:
         "Real-time commission tracking with automated payments and transparent fee structures.",
-    },
-    {
-      icon: Users,
-      title: "Influencer Management",
-      description:
-        "Comprehensive influencer profiles with performance metrics and collaboration history.",
-    },
-    {
-      icon: FileText,
-      title: "Contract Templates",
-      description:
-        "Pre-built contract templates for different campaign types, customizable to your needs.",
     },
     {
       icon: Lock,
@@ -57,10 +38,16 @@ export default function LandingPage({ onGetStarted }: LandingPageProps) {
         "Escrow-protected payments ensure funds are released only when deliverables are met.",
     },
     {
-      icon: TrendingUp,
+      icon: BarChart3,
       title: "Analytics Dashboard",
       description:
-        "Detailed analytics and reporting to track campaign performance and ROI.",
+        "Detailed analytics and reporting to track commission performance and earnings.",
+    },
+    {
+      icon: Shield,
+      title: "Safe Transactions",
+      description:
+        "Secure, legally-binding agreements that protect all parties with built-in dispute resolution.",
     },
   ];
 
@@ -91,26 +78,31 @@ export default function LandingPage({ onGetStarted }: LandingPageProps) {
   return (
     <div className="bg-white min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
+      <section className="bg-gradient-to-br from-green-50 to-emerald-100 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="flex justify-center items-center space-x-2 mb-6">
-              <Shield className="h-12 w-12 text-blue-600" />
+              <div className="relative">
+                <CheckCircle className="h-12 w-12 text-green-600" />
+                <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white"></div>
+              </div>
               <span className="text-3xl font-bold text-gray-900">
-                InfluenceHub
+                CommiSafe
               </span>
-              <Badge variant="secondary" className="text-sm">
-                Safe Contracting
+              <Badge
+                variant="secondary"
+                className="text-sm bg-green-100 text-green-800"
+              >
+                Secure Commissions
               </Badge>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              Make Influencer Marketing
-              <span className="text-blue-600 block">Safe & Profitable</span>
+              Make Commission Tracking
+              <span className="text-green-600 block">Safe & Transparent</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              The only platform that combines secure contracting, real-time
-              commission tracking, and transparent payments for influencers and
-              brands.
+              The secure platform for commission tracking with real-time
+              monitoring, automated payments, and complete transparency.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
@@ -148,11 +140,11 @@ export default function LandingPage({ onGetStarted }: LandingPageProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Everything You Need for Safe Influencer Marketing
+              Everything You Need for Secure Commission Management
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Built by marketers, for marketers. Our platform handles the
-              complexity so you can focus on creating amazing campaigns.
+              Built by finance professionals, for professionals. Our platform
+              handles the complexity so you can focus on growing your business.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -165,8 +157,8 @@ export default function LandingPage({ onGetStarted }: LandingPageProps) {
                 >
                   <CardHeader>
                     <div className="flex items-center space-x-3">
-                      <div className="p-2 bg-blue-100 rounded-lg">
-                        <Icon className="h-6 w-6 text-blue-600" />
+                      <div className="p-2 bg-green-100 rounded-lg">
+                        <Icon className="h-6 w-6 text-green-600" />
                       </div>
                       <CardTitle className="text-xl">{feature.title}</CardTitle>
                     </div>
@@ -196,20 +188,22 @@ export default function LandingPage({ onGetStarted }: LandingPageProps) {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-4xl font-bold text-blue-600 mb-2">10K+</div>
-              <div className="text-gray-600">Active Influencers</div>
+              <div className="text-4xl font-bold text-green-600 mb-2">5K+</div>
+              <div className="text-gray-600">Active Users</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-blue-600 mb-2">500+</div>
-              <div className="text-gray-600">Partner Brands</div>
+              <div className="text-4xl font-bold text-green-600 mb-2">250+</div>
+              <div className="text-gray-600">Partner Companies</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-blue-600 mb-2">$2M+</div>
-              <div className="text-gray-600">Commissions Paid</div>
+              <div className="text-4xl font-bold text-green-600 mb-2">$5M+</div>
+              <div className="text-gray-600">Commissions Tracked</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-blue-600 mb-2">99.9%</div>
-              <div className="text-gray-600">Uptime</div>
+              <div className="text-4xl font-bold text-green-600 mb-2">
+                99.9%
+              </div>
+              <div className="text-gray-600">Accuracy Rate</div>
             </div>
           </div>
         </div>
@@ -259,14 +253,14 @@ export default function LandingPage({ onGetStarted }: LandingPageProps) {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-blue-600">
+      <section className="py-20 bg-green-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Ready to Transform Your Influencer Marketing?
+            Ready to Secure Your Commission Tracking?
           </h2>
-          <p className="text-xl text-blue-100 mb-8">
-            Join thousands of influencers and brands who trust InfluenceHub for
-            safe, profitable partnerships.
+          <p className="text-xl text-green-100 mb-8">
+            Join thousands of professionals who trust CommiSafe for secure,
+            transparent commission management.
           </p>
           <Button
             size="lg"
@@ -277,7 +271,7 @@ export default function LandingPage({ onGetStarted }: LandingPageProps) {
             <Zap className="mr-2 h-5 w-5" />
             Start Your Free Trial
           </Button>
-          <p className="text-sm text-blue-200 mt-4">
+          <p className="text-sm text-green-200 mt-4">
             No credit card required • 14-day free trial • Cancel anytime
           </p>
         </div>
