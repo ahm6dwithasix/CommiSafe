@@ -56,7 +56,7 @@ export default function LandingPage({ onGetStarted }: LandingPageProps) {
       name: "Sarah Johnson",
       role: "Fashion Influencer",
       content:
-        "InfluenceHub made it so easy to manage my brand partnerships. The contracts are clear and payments are always on time.",
+        "CommiSafe made it so easy to manage my brand partnerships. The contracts are clear and payments are always on time.",
       rating: 5,
     },
     {
