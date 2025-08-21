@@ -108,12 +108,16 @@ export default function LandingPage({ onGetStarted }: LandingPageProps) {
               <Button
                 size="lg"
                 onClick={onGetStarted}
-                className="text-lg px-8 py-3"
+                className="text-lg px-8 py-3 transform transition-all duration-200 hover:scale-105 active:scale-95"
               >
                 Get Started Free
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" />
               </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8 py-3">
+              <Button
+                size="lg"
+                variant="outline"
+                className="text-lg px-8 py-3 transform transition-all duration-200 hover:scale-105 active:scale-95"
+              >
                 Watch Demo
               </Button>
             </div>
@@ -266,9 +270,9 @@ export default function LandingPage({ onGetStarted }: LandingPageProps) {
             size="lg"
             variant="secondary"
             onClick={onGetStarted}
-            className="text-lg px-8 py-3"
+            className="text-lg px-8 py-3 transform transition-all duration-200 hover:scale-105 active:scale-95 group"
           >
-            <Zap className="mr-2 h-5 w-5" />
+            <Zap className="mr-2 h-5 w-5 transition-transform duration-200 group-hover:rotate-12" />
             Start Your Free Trial
           </Button>
           <p className="text-sm text-green-200 mt-4">

@@ -2,6 +2,8 @@ import { useState } from "react";
 import Navigation from "./layout/Navigation";
 import Dashboard from "./dashboard/Dashboard";
 import LandingPage from "./landing/LandingPage";
+import LoginDialog from "./auth/LoginDialog";
+import { Toaster } from "@/components/ui/toaster";
 
 interface Contract {
   id: string;
@@ -17,8 +19,24 @@ interface Contract {
 function Home() {
   const [currentPage, setCurrentPage] = useState("home");
   const [contracts, setContracts] = useState<Contract[]>([]);
+  const [showLogin, setShowLogin] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const handleGetStarted = () => {
+    setShowLogin(true);
+  };
+
+  const handleDashboardClick = () => {
+    if (!isAuthenticated) {
+      setShowLogin(true);
+    } else {
+      setCurrentPage("dashboard");
+    }
+  };
+
+  const handleLogin = () => {
+    setIsAuthenticated(true);
+    setShowLogin(false);
     setCurrentPage("dashboard");
   };
 
@@ -44,8 +62,23 @@ function Home() {
 
   return (
     <div className="min-h-screen">
-      <Navigation currentPage={currentPage} onPageChange={setCurrentPage} />
+      <Navigation
+        currentPage={currentPage}
+        onPageChange={(page) => {
+          if (page === "dashboard") {
+            handleDashboardClick();
+          } else {
+            setCurrentPage(page);
+          }
+        }}
+      />
       {renderCurrentPage()}
+      <LoginDialog
+        open={showLogin}
+        onOpenChange={setShowLogin}
+        onLogin={handleLogin}
+      />
+      <Toaster />
     </div>
   );
 }

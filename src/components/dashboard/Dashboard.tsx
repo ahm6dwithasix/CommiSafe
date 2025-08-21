@@ -32,13 +32,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-} from "@/components/ui/sheet";
+
 import {
   Users,
   FileText,
@@ -393,18 +387,18 @@ export default function Dashboard({
         onContractCreated={onContractCreated}
       />
 
-      {/* Add New Influencer Sheet */}
-      <Sheet open={showAddInfluencer} onOpenChange={setShowAddInfluencer}>
-        <SheetContent className="bg-white w-[400px] sm:w-[540px]">
-          <SheetHeader>
-            <SheetTitle className="flex items-center">
+      {/* Add New Influencer Dialog */}
+      <Dialog open={showAddInfluencer} onOpenChange={setShowAddInfluencer}>
+        <DialogContent className="bg-white max-w-md">
+          <DialogHeader>
+            <DialogTitle className="flex items-center">
               <User className="h-5 w-5 mr-2 text-blue-600" />
               Add New Influencer
-            </SheetTitle>
-            <SheetDescription>
+            </DialogTitle>
+            <DialogDescription>
               Add a new influencer to your network
-            </SheetDescription>
-          </SheetHeader>
+            </DialogDescription>
+          </DialogHeader>
           <form
             onSubmit={(e) => {
               e.preventDefault();
@@ -467,19 +461,19 @@ export default function Dashboard({
               <Button type="submit">Add Influencer</Button>
             </div>
           </form>
-        </SheetContent>
-      </Sheet>
+        </DialogContent>
+      </Dialog>
 
-      {/* Process Payment Sheet */}
-      <Sheet open={showProcessPayment} onOpenChange={setShowProcessPayment}>
-        <SheetContent className="bg-white w-[400px] sm:w-[540px]">
-          <SheetHeader>
-            <SheetTitle className="flex items-center">
+      {/* Process Payment Dialog */}
+      <Dialog open={showProcessPayment} onOpenChange={setShowProcessPayment}>
+        <DialogContent className="bg-white max-w-md">
+          <DialogHeader>
+            <DialogTitle className="flex items-center">
               <CreditCard className="h-5 w-5 mr-2 text-green-600" />
               Process Payment
-            </SheetTitle>
-            <SheetDescription>Process a commission payment</SheetDescription>
-          </SheetHeader>
+            </DialogTitle>
+            <DialogDescription>Process a commission payment</DialogDescription>
+          </DialogHeader>
           <form
             onSubmit={(e) => {
               e.preventDefault();
@@ -544,21 +538,21 @@ export default function Dashboard({
               <Button type="submit">Process Payment</Button>
             </div>
           </form>
-        </SheetContent>
-      </Sheet>
+        </DialogContent>
+      </Dialog>
 
-      {/* Analytics Sheet */}
-      <Sheet open={showAnalytics} onOpenChange={setShowAnalytics}>
-        <SheetContent className="bg-white w-[600px] sm:w-[800px] max-w-[90vw] overflow-y-auto">
-          <SheetHeader>
-            <SheetTitle className="flex items-center">
+      {/* Analytics Dialog */}
+      <Dialog open={showAnalytics} onOpenChange={setShowAnalytics}>
+        <DialogContent className="bg-white max-w-4xl max-h-[90vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="flex items-center">
               <BarChart3 className="h-5 w-5 mr-2 text-purple-600" />
               Analytics Dashboard
-            </SheetTitle>
-            <SheetDescription>
+            </DialogTitle>
+            <DialogDescription>
               Detailed performance metrics and insights
-            </SheetDescription>
-          </SheetHeader>
+            </DialogDescription>
+          </DialogHeader>
           <div className="space-y-6">
             <div className="flex items-center space-x-4">
               <Label htmlFor="timeframe">Time Period:</Label>
@@ -762,8 +756,8 @@ export default function Dashboard({
               </Card>
             </div>
           </div>
-        </SheetContent>
-      </Sheet>
+        </DialogContent>
+      </Dialog>
 
       {/* Contract Details Dialog */}
       <Dialog open={showContractDetails} onOpenChange={setShowContractDetails}>
